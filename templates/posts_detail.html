@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ article.title }}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>{{ article.title }}</h1>
+    <div class="p-2 p-md-3 mb-2 rounded text-bg-dark">
+    <div class="col-md-50 px-0">
+      <h6 class="display-10 fst-italic">{{ article.text }}</h6>
+        <p class="lead my-3">{{ article.author }}</p>
+        <p class="lead my-3">Дата публикации: {{ article.date.date() }}</p>
+        <a href="/posts/{{ article.id }}/delete" type="button" class="btn btn-danger">Удаления статьи</a>
+        <a href="/posts/{{ article.id }}/update" type="button" class="btn btn-secondary">Редактирования статьи</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
